@@ -12,8 +12,7 @@ namespace XFUploadFile.Server.Controllers
     [Route("[controller]")]
     public class UploadFileController : ControllerBase
     {
-        //CloudStorageAccount cloudStorageAccount = CloudStorageAccount.Parse("<Your Connection String Here>");
-
+ 
         private readonly ILogger<UploadFileController> _logger;
         private readonly IWebHostEnvironment _environment;
 
@@ -45,7 +44,6 @@ namespace XFUploadFile.Server.Controllers
                             await file.CopyToAsync(memoryStream);
                             System.IO.File.WriteAllBytes(Path.Combine(filePath, file.FileName), memoryStream.ToArray());
 
-                            //await UploadToAzureAsync(file);
                         }
 
                        
